@@ -20,7 +20,7 @@ export default function RegisterScreen() {
     try {      
         const res = await register({ firstName,lastName,phoneNumber,email,password, businessName});
         alert("Register succesfully for " + email);
-        navigation.navigate("Login")
+        navigation.navigate("AddPayment", { userId: res.data.userId });
     }
     catch(error){
        alert(error);

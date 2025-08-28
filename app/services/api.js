@@ -8,8 +8,8 @@ const API = axios.create({
 export const register = (data) => API.post("/StoreOwner/register", data);
 export const login = (data) => API.post("/auth/login", data);
 
-export const addPaymentMethod = (userId, paymentMethodId) =>
-  API.post(`/payments/${userId}/add`, { paymentMethodId });
+export const addPaymentMethod = (data) =>
+                    API.post(`/StoreOwner/add-payment-method/`, data);
 
 export const requestService = (data) => API.post("/serviceRequests", data);
 

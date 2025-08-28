@@ -14,7 +14,7 @@ const LoginScreen = () => {
       const res = await login({ email, password });
       global.authToken = res.data.token;
       alert("Login succesfully with token " + global.authToken);
-      navigation.navigate("AddPayment", { userId: res.data.userId });
+     
     }
     catch(error){
       alert(error);
@@ -36,7 +36,7 @@ const LoginScreen = () => {
 
         {/* Title */}
         <Text className="text-xl font-semibold text-center mb-6">
-          Get started with TickTickGo NailTech
+          Get started with TickTickGo
         </Text>
 
         {/* Input */}
@@ -79,14 +79,7 @@ const LoginScreen = () => {
         <TouchableOpacity className="w-full bg-gray-100 rounded-lg py-3 items-center mb-3">
           <Text className="text-base">🔴 Continue with Google</Text>
         </TouchableOpacity>
-
-        {/* OR */}
-        <Text className="text-gray-500 my-4">or</Text>
-
-        {/* Find my account */}
-        <TouchableOpacity>
-          <Text className="text-base font-medium">🔍 Find my account</Text>
-        </TouchableOpacity>
+    
 
         {/* Footer */}
         <Text className="text-xs text-gray-500 text-center mt-6">
@@ -95,6 +88,10 @@ const LoginScreen = () => {
           number provided. Text "STOP" to 89203 to opt out.
         </Text>
     
+
+     <TouchableOpacity className="w-full bg-gray-100 rounded-lg py-3 items-center mb-3" onPress={() => navigation.navigate("AddPayment")}>
+          <Text className="text-base">Add Payment</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
